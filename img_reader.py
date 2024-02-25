@@ -8,6 +8,9 @@ image1_filename = "./imgs/tele11.jpg"
 image2_filename = "./imgs/tele12.jpg"
 
 
+img_url = "https://oaidalleapiprodscus.blob.core.windows.net/private/org-d3Ez097k2uSgE61j0q9lgKRu/user-IrViFEcIoJ1FsOQqlUvxFGWb/img-bRp7U4cHtZOk9qDOZdsNHKSa.png?st=2024-02-23T23%3A58%3A52Z&se=2024-02-24T01%3A58%3A52Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-02-23T21%3A46%3A54Z&ske=2024-02-24T21%3A46%3A54Z&sks=b&skv=2021-08-06&sig=QG4Ma98Ym6%2BvBx9RX9/KjrOjXKkrHJc%2Bpgf%2BwAiJSjY%3D"
+
+
 
 
 def encode_image(image_path):
@@ -40,9 +43,6 @@ then add a sentence of your own opinion or style.
 '''
 
 
-
-
-
 response = client.chat.completions.create(
   model="gpt-4-vision-preview",
   messages=[
@@ -61,7 +61,8 @@ response = client.chat.completions.create(
         },
         {
           "type": "image_url",
-          "image_url": f"data:image/jpeg;base64,{base64_image_1}",
+          #"image_url": f"data:image/jpeg;base64,{base64_image_1}",
+          "image_url": img_url,
         },
         '''        
         {
